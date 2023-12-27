@@ -30,3 +30,5 @@ composer-install:
 
 composer-update:
 	${DOCKER_COMPOSE} run --rm laravel-app composer update
+
+
