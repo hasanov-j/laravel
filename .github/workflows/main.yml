@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - main
+
+name: 🎉 Deploy website on push
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v1
+
+      - name: 🧪 Tests
+        run: |
+          bash ./.github/actions/script.sh
+
+      - name: 🚀 Deployment
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          local-dir: ./application/
+          server: hasanoi8.beget.tech
+          username: hasanoi8_www
+          password: Helloworld101!
+          dangerous-clean-slate: false
