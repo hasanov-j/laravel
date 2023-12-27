@@ -29,6 +29,7 @@ class PostController extends Controller
 //            ]
 //        );
 
+
         return response()->json(data: $user->posts()->create($request->validated()),status: Response::HTTP_CREATED);
     }
 

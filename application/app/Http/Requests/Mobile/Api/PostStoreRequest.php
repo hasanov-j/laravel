@@ -10,27 +10,4 @@ class PostStoreRequest extends FormRequest
     {
         return true;
     }
-
-    public function rules(): array
-    {
-        return [
-            'title'=>[
-                'string',
-                'required',
-            ],
-            'description'=>[
-                'required',
-                'string',
-            ],
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            "title.required"=>"Введите название тему",
-            "title.size"=>"Размер поста превышает 255 символов",
-            "title.string"=>"Тема должна содержать только строковые значения",
-        ];
-    }
 }
